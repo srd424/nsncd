@@ -95,7 +95,7 @@ jobs:
           apt-get build-dep -y .
       - uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
-          toolchain: ${{ github.event.schedule && 'nightly' || 'stable' }}
+          toolchain: ${{ github.event.schedule && 'nightly' || 'nightly' }}
       - name: Build package
         run: |
           debian/rules vendor
